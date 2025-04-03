@@ -1,0 +1,27 @@
+shared:
+  time_zone: UTC
+development:
+  app_domain:
+    hostname: thecreatorcentral.localhost
+    protocol: http
+    port: 3000
+  sites_domain:
+    hostname: thecreatorcentralsite.localhost
+    protocol: http
+    port: 3010
+test:
+  app_domain:
+    hostname: testtcc.localhost
+    protocol: http
+    port: 3000
+  sites_domain:
+    hostname: testtccsite.localhost
+    protocol: http
+    port: 3010
+production:
+  app_domain:
+    hostname: thecreatorcentral.com
+    protocol: https
+  sites_domain:
+    hostname: thecreatorcentral.site
+    protocol: https
