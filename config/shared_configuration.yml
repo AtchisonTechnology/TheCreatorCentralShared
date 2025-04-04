@@ -1,5 +1,7 @@
 shared:
   time_zone: UTC
+  nginx_ipaddresses:
+    - 98.85.139.204
 development:
   app_domain:
     hostname: thecreatorcentral.localhost
@@ -9,6 +11,10 @@ development:
     hostname: thecreatorcentralsite.localhost
     protocol: http
     port: 3010
+  sites:
+    base_hostname_segment: ".thecreatorcentralsite.localhost:3010"
+    cname_hostname: "sites.thecreatorcentralsite.localhost:3010"
+    protocol: http
 test:
   app_domain:
     hostname: testtcc.localhost
@@ -18,10 +24,18 @@ test:
     hostname: testtccsite.localhost
     protocol: http
     port: 3010
+  sites:
+    base_hostname_segment: ".testtccsite.example"
+    cname_hostname: "sites.testtccsite.example"
+    protocol: http
 production:
   app_domain:
     hostname: thecreatorcentral.com
     protocol: https
   sites_domain:
     hostname: thecreatorcentral.site
+    protocol: https
+  sites:
+    base_hostname_segment: ".thecreatorcentral.site"
+    cname_hostname: "sites.thecreatorcentral.site"
     protocol: https
