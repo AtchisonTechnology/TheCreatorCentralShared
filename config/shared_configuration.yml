@@ -13,7 +13,7 @@ development:
     port: 3010
   sites:
     base_hostname_segment: ".thecreatorcentralsite.localhost:3010"
-    cname_hostname: "sites.thecreatorcentralsite.localhost:3010"
+    cname_hostname: "sites.thecreatorcentralsite.localhost"
     protocol: http
 test:
   app_domain:
