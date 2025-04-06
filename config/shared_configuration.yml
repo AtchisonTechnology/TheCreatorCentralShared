@@ -15,6 +15,9 @@ development:
     base_hostname_segment: ".thecreatorcentralsite.localhost:3010"
     cname_hostname: "sites.thecreatorcentralsite.localhost"
     protocol: http
+  services:
+    app: "app.thecreatorcentral.localhost:3000"
+    sites: "app.thecreatorcentralsite.localhost:3010"
 test:
   app_domain:
     hostname: testtcc.localhost
@@ -39,3 +42,5 @@ production:
     base_hostname_segment: ".thecreatorcentral.site"
     cname_hostname: "sites.thecreatorcentral.site"
     protocol: https
+    app: "app.thecreatorcentral.com"
+    sites: "app.thecreatorcentralsite.site"
