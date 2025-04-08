@@ -1,0 +1,65 @@
+details:
+  twitterx:
+    name: Twitter/X
+    fi_icon: fi-social-twitter
+    profile: "https://x.com/%ident%"
+  facebook:
+    name: Facebook
+    fi_icon: fi-social-facebook
+    profile: "https://facebook.com/%ident%"
+  instagram:
+    name: Instagram
+    fi_icon: fi-social-instagram
+    profile: "https://instagram.com/%ident%"
+  tiktok:
+    name: TikTok
+    profile: "https://tiktok.com/@%ident%"
+  linkedin:
+    name: LinkedIn
+    fi_icon: fi-social-linkedin
+    profile: "https://linkedin.com/%ident%"
+  youtube:
+    name: YouTube
+    fi_icon: fi-social-youtube
+    profile: "https://youtube.com/%ident%"
+  medium:
+    name: Medium
+    fi_icon: fi-social-medium
+    profile: "https://medium.com/%ident%"
+  whatsapp:
+    name: WhatsApp
+    fi_icon: fi-social-whatsapp
+    profile: "https://wa.me/%ident%"
+  pinterest:
+    name: Pinterest
+    fi_icon: fi-social-pinterest
+    profile: "https://pinterest.com/%ident%"
+  bluesky:
+    name: Bluesky
+    profile: "https://bluesky.com/%ident%"
+  threads:
+    name: Threads
+    profile: "https://threads.com/%ident%"
+  github:
+    name: GitHub
+    fi_icon: fi-social-github
+    profile: "https://github.com/%ident%"
+  reddit:
+    name: Reddit
+    fi_icon: fi-social-reddit
+    profile: "https://reddit.com/u/%ident%"
+primary:
+  - :twitterx
+  - :facebook
+  - :instagram
+  - :tiktok
+  - :linkedin
+  - :youtube
+secondary:
+  - :medium
+  - :whatsapp
+  - :pinterest
+  - :bluesky
+  - :threads
+  - :github
+  - :reddit
