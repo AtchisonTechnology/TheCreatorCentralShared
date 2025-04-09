@@ -1,4 +1,5 @@
 details:
+  # LEELEE: These profiles all need to be updated!!!
   twitterx:
     name: Twitter/X
     fi_icon: fi-social-twitter
@@ -17,7 +18,7 @@ details:
   linkedin:
     name: LinkedIn
     fi_icon: fi-social-linkedin
-    profile: "https://linkedin.com/%ident%"
+    profile: "https://linkedin.com/in/%ident%"
   youtube:
     name: YouTube
     fi_icon: fi-social-youtube
