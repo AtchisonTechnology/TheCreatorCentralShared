@@ -1,5 +1,4 @@
 details:
-  # LEELEE: These profiles all need to be updated!!!
   twitterx:
     name: Twitter/X
     fi_icon: fi-social-twitter
@@ -22,7 +21,7 @@ details:
   youtube:
     name: YouTube
     fi_icon: fi-social-youtube
-    profile: "https://youtube.com/%ident%"
+    profile: "https://youtube.com/@%ident%"
   medium:
     name: Medium
     fi_icon: fi-social-medium
@@ -37,10 +36,10 @@ details:
     profile: "https://pinterest.com/%ident%"
   bluesky:
     name: Bluesky
-    profile: "https://bluesky.com/%ident%"
+    profile: "https://bsky.app/profile/%ident%"
   threads:
     name: Threads
-    profile: "https://threads.com/%ident%"
+    profile: "https://www.threads.net/@%ident%"
   github:
     name: GitHub
     fi_icon: fi-social-github
