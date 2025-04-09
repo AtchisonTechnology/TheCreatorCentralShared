@@ -1,0 +1,83 @@
+#
+#
+# Subscription Packages/Editions
+#
+#
+packages:
+  - id: free
+    name: Free
+    enabled: true
+    visible: false
+    default: true
+    no_expiration_date: true
+    limits:
+      max-sites: 2
+      max-pages: 10
+      max-articles: 20
+      max-products: 5
+      max-users: 1
+      max-tracked-ck-users: 50
+      max-pageviews: 500
+      custom-domains: false
+      req-cc-branding: true
+  - id: basic
+    name: Basic
+    enabled: true
+    visible: true
+    stripe_product:
+      test: prod_P2OWec7dtY2K0x
+      live: prod_P2KIwkLNNcaNfK
+    visible_prices:
+      month: basic-month
+      year: basic-year
+    limits:
+      max-sites: 10
+      max-pages: 30
+      max-articles: 100
+      max-products: 10
+      max-users: 5
+      max-tracked-ck-users: 1000
+      max-pageviews: 5000
+      custom-domains: true
+      req-cc-branding: false
+  - id: plus
+    name: Plus
+    enabled: true
+    visible: true
+    featured: true
+    stripe_product:
+      test: prod_P2OXZCr7pRDuxI
+      live: prod_P2KI47O18Iny0b
+    visible_prices:
+      month: plus-month
+      year: plus-year
+    limits:
+      max-sites: 25
+      max-pages: 100
+      max-articles: 500
+      max-products: 20
+      max-users: 10
+      max-tracked-ck-users: 5000
+      max-pageviews: 50000
+      custom-domains: true
+      req-cc-branding: false
+  - id: premium
+    name: Premium
+    enabled: true
+    visible: true
+    stripe_product:
+      test: prod_P2OY80hCeScKJN
+      live: prod_P2KJg9kylGIHd7
+    visible_prices:
+      month: premium-month
+      year: premium-year
+    limits:
+      max-sites: 50
+      max-pages: 500
+      max-articles: 1000
+      max-products: 100
+      max-users: 20
+      max-tracked-ck-users: 20000
+      max-pageviews: 500000
+      custom-domains: true
+      req-cc-branding: false
