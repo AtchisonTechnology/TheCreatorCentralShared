@@ -25,7 +25,7 @@ packages:
     enabled: true
     visible: true
     stripe_product:
-      test: prod_P2OWec7dtY2K0x
+      test: prod_S6KOcopRMb5EdL
       live: prod_P2KIwkLNNcaNfK
     visible_prices:
       month: basic_month
@@ -46,7 +46,7 @@ packages:
     visible: true
     featured: true
     stripe_product:
-      test: prod_P2OXZCr7pRDuxI
+      test: prod_S6KPDH100z383v
       live: prod_P2KI47O18Iny0b
     visible_prices:
       month: plus_month
@@ -66,7 +66,7 @@ packages:
     enabled: true
     visible: true
     stripe_product:
-      test: prod_P2OY80hCeScKJN
+      test: prod_S6KQnSKtyjtvlD
       live: prod_P2KJg9kylGIHd7
     visible_prices:
       month: premium_month
