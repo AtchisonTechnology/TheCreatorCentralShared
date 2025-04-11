@@ -1,2 +1,3 @@
+require_rel './shared/'
 require_rel './renderers/'
 ThisIsATest="LEELEE" # LEELEE: Fill this in...
