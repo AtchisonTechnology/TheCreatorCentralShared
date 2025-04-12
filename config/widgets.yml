@@ -1,5 +1,0 @@
-widgets:
-  text_widget:
-    name: Text
-  rawhtml_widget:
-    name: Raw HTML

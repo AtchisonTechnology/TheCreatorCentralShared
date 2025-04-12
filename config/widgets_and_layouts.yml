@@ -1,0 +1,96 @@
+widgets:
+  text_widget:
+    name: Text
+  rawhtml_widget:
+    name: Raw HTML
+
+
+page_layouts:
+  single:
+    label: Single Column
+    includes: [main]
+    default: main
+    names:
+      main: Main Content
+    content_position: [main]
+    content_size:
+      main: 1
+  left-side:
+    label: Main + Left Sidebar
+    includes: [main,alt1]
+    default: main
+    names:
+      main: Main Content
+      alt1: Left Sidebar
+    content_position: [alt1,main]
+    content_size:
+      alt1: 1
+      main: 3
+  right-side:
+    label: Main + Right Sidebar
+    includes: [main,alt1]
+    default: main
+    names:
+      main: Main Content
+      alt1: Right Sidebar
+    content_position: [main,alt1]
+    content_size:
+      main: 3
+      alt1: 1
+  wide-right-side:
+    label: Main + Wide Right Sidebar
+    includes: [main,alt1]
+    default: main
+    names:
+      main: Main Content
+      alt1: Right Sidebar
+    content_position: [main,alt1]
+    content_size:
+      main: 3
+      alt1: 2
+  both-sides:
+    label: Main + Two Sidebars
+    includes: [main,alt1,alt2]
+    default: main
+    names:
+      main: Main Content
+      alt1: Left Sidebar
+      alt2: Right Sidebar
+    content_position: [alt1,main,alt2]
+    content_size:
+      alt1: 1
+      main: 3
+      alt2: 1
+  two-equal:
+    label: Two Equal Columns
+    includes: [main,alt1]
+    default: main
+    names:
+      main: Left Content
+      alt1: Right Content
+    content_position: [main,alt1]
+    content_size:
+      main: 1
+      alt1: 1
+  three-equal:
+    label: Three Equal Columns
+    includes: [alt1,main,alt2]
+    default: main
+    names:
+      alt1: Left Content
+      main: Middle Content
+      alt2: Right Content
+    content_position: [alt1,main,alt2]
+    content_size:
+      alt1: 1
+      main: 1
+      alt2: 1
+
+#  # 'none' is used for Header/Footer template
+#  none:
+#    label: Header/Footer Template
+#    includes: []
+#    default: header
+#    names: []
+#    content_position: []
+#    content_size: []
