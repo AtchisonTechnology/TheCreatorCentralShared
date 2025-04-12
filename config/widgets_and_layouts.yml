@@ -12,15 +12,17 @@ page_layouts:
     label: Single Column
     includes: [main]
     default: main
+    layout: simple_columns
     names:
       main: Main Content
     content_position: [main]
     content_size:
       main: 1
-  left-side:
+  left_side:
     label: Main + Left Sidebar
     includes: [main,alt1]
     default: main
+    layout: simple_columns
     names:
       main: Main Content
       alt1: Left Sidebar
@@ -28,10 +30,11 @@ page_layouts:
     content_size:
       alt1: 1
       main: 3
-  right-side:
+  right_side:
     label: Main + Right Sidebar
     includes: [main,alt1]
     default: main
+    layout: simple_columns
     names:
       main: Main Content
       alt1: Right Sidebar
@@ -39,10 +42,11 @@ page_layouts:
     content_size:
       main: 3
       alt1: 1
-  wide-right-side:
+  wide_right_side:
     label: Main + Wide Right Sidebar
     includes: [main,alt1]
     default: main
+    layout: simple_columns
     names:
       main: Main Content
       alt1: Right Sidebar
@@ -50,10 +54,11 @@ page_layouts:
     content_size:
       main: 3
       alt1: 2
-  both-sides:
+  both_sides:
     label: Main + Two Sidebars
     includes: [main,alt1,alt2]
     default: main
+    layout: simple_columns
     names:
       main: Main Content
       alt1: Left Sidebar
@@ -63,10 +68,11 @@ page_layouts:
       alt1: 1
       main: 3
       alt2: 1
-  two-equal:
+  two_equal:
     label: Two Equal Columns
     includes: [main,alt1]
     default: main
+    layout: simple_columns
     names:
       main: Left Content
       alt1: Right Content
@@ -74,10 +80,11 @@ page_layouts:
     content_size:
       main: 1
       alt1: 1
-  three-equal:
+  three_equal:
     label: Three Equal Columns
     includes: [alt1,main,alt2]
     default: main
+    layout: simple_columns
     names:
       alt1: Left Content
       main: Middle Content
