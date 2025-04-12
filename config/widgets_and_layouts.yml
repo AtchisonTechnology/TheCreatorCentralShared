@@ -1,10 +1,12 @@
 widgets:
   text_widget:
     name: Text
+    edit_submit_top: false
+    edit_submit_bottom: true
   rawhtml_widget:
     name: Raw HTML
-
-
+    edit_submit_top: false
+    edit_submit_bottom: true
 page_layouts:
   single:
     label: Single Column
