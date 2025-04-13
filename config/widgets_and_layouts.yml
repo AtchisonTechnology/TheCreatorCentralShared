@@ -94,12 +94,3 @@ page_layouts:
       alt1: 1
       main: 1
       alt2: 1
-
-#  # 'none' is used for Header/Footer template
-#  none:
-#    label: Header/Footer Template
-#    includes: []
-#    default: header
-#    names: []
-#    content_position: []
-#    content_size: []
