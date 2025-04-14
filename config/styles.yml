@@ -1,10 +1,106 @@
-list:
-  font-size:
-    type: :list
-    list: ["12px", "14px", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "36px", "48px", "72px"]
-  font-weight:
-    type: :list
-    list: ["normal", "bold"]
-  text-style:
-    type: :list
-    list: ["normal", "italic"]
+#
+#
+# Site Styles
+#
+#
+defaults:
+  site_styles:
+    page_widths: 'full'
+    font_family: 'Tahoma,Verdana,Arial,sans-serif'
+    font_size: '16'
+    h1_font_size: '48'
+    caption_font_size: '12'
+    line_height: '1.5em'
+site_styles:
+  page_widths:
+    - ['Full Width','full']
+    - [' ','-']
+    - ['% Page Width','-']
+    - ['80% Wide','80%']
+    - ['60% Wide','60%']
+    - ['40% Wide','40%']
+    - [' ','-']
+    - ['Fixed Width','-']
+    - ['1600px Wide','1600px']
+    - ['1200px Wide','1200px']
+    - ['1000px Wide','1000px']
+    - ['800px Wide','800px']
+    - ['600px Wide','600px']
+  font_family:
+    - ['Sans-Serif','-']
+    - ['General Sans-serif','Tahoma,Verdana,Arial,sans-serif']
+    - ['Arial,sans-serif','Arial,sans-serif']
+    - ['Verdana, sans-serif','Verdana, sans-serif']
+    - ['Tahoma, sans-serif','Tahoma, sans-serif']
+    - ['Trebuchet MS, sans-serif','Trebuchet MS, sans-serif']
+    - [' ','-']
+    - ['Serif','-']
+    - ['General Serif','Times New Roman,Georgia, serif']
+    - ['Times New Roman, serif','Times New Roman, serif']
+    - ['Georgia, serif','Georgia, serif']
+    - ['Garamond, serif','Garamond, serif']
+    - [' ','-']
+    - ['Specialty','-']
+    - ['Courier New, monospace','Courier New, monospace']
+    - ['Brush Script MT, cursive','Brush Script MT, cursive']
+    - [' ','-']
+    - ['Generic','-']
+    - ['serif','serif']
+    - ['sans-serif','sans-serif']
+    - ['monospace','monospace']
+    - ['cursive','cursive']
+    - ['emoji','emoji']
+  # https://pimpmytype.com/font-size/
+  font_size:
+    - ['12px','12']
+    - ['14px','14']
+    - ['16px (Recommended)','16']
+    - ['18px','18']
+    - ['20px','20']
+    - ['24px','24']
+  h1_font_size:
+    - ['24px','24']
+    - ['28px','28']
+    - ['32px','32']
+    - ['36px','36']
+    - ['40px','40']
+    - ['44px','44']
+    - ['48px (Recommended)','48']
+    - ['56px','56']
+    - ['64px','64']
+    - ['96px','96']
+    - ['128px','128']
+  caption_font_size:
+    - ['8px',8]
+    - ['10px',10]
+    - ['12px (Recommended)',12]
+    - ['14px',14]
+    - ['16px',16]
+  line_height:
+    - ['0.8em',"0.8em"]
+    - ['0.9em',"0.9em"]
+    - ['1.0em',"1.0em"]
+    - ['1.1em',"1.1em"]
+    - ['1.2em',"1.2em"]
+    - ['1.3em',"1.3em"]
+    - ['1.4em',"1.4em"]
+    - ['1.5em (Recommended)',"1.5em"]
+    - ['1.7em',"1.7em"]
+    - ['2.0em',"2.0em"]
+    - ['2.2em',"2.2em"]
+    - ['2.5em',"2.5em"]
+    - ['3.0em',"3.0em"]
+    - ['3.5em',"3.5em"]
+
+
+
+#list:
+#  font-size:
+#    type: :list
+#    list: ["12px", "14px", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "36px", "48px", "72px"]
+#  font-weight:
+#    type: :list
+#    list: ["normal", "bold"]
+#  text-style:
+#    type: :list
+#    list: ["normal", "italic"]
