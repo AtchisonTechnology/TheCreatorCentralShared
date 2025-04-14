@@ -32,6 +32,12 @@ test:
     cname_hostname: "sites.testtccsite.example"
     protocol: http
 production:
+  file_assets_domain:
+    hostname: file-assets.thecreatorcentral.site
+    protocol: https
+  avatar_assets_domain:
+    hostname: avatar-assets.thecreatorcentral.site
+    protocol: https
   app_domain:
     hostname: thecreatorcentral.com
     protocol: https
