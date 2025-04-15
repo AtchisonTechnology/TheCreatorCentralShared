@@ -11,6 +11,23 @@ defaults:
     h1_font_size: '48'
     caption_font_size: '12'
     line_height: '1.5em'
+  widget_styles:
+    width: ""
+    height: ""
+    text_color: ""
+    margin_top: ""
+    margin_right: ""
+    margin_bottom: ""
+    margin_left: ""
+    padding_top: ""
+    padding_right: ""
+    padding_bottom: ""
+    padding_left: ""
+    shadow: ""
+    rounded: ""
+    border_size: ""
+    border_color: ""
+    fixed_position: ""
 site_styles:
   page_widths:
     - ['Full Width','full']
@@ -91,16 +108,27 @@ site_styles:
     - ['2.5em',"2.5em"]
     - ['3.0em',"3.0em"]
     - ['3.5em',"3.5em"]
-
-
-
-#list:
-#  font-size:
-#    type: :list
-#    list: ["12px", "14px", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "36px", "48px", "72px"]
-#  font-weight:
-#    type: :list
-#    list: ["normal", "bold"]
-#  text-style:
-#    type: :list
-#    list: ["normal", "italic"]
+widget_styles:
+  width: :string
+  height: :string
+  text_color: :color_picker
+  margin_top: :special
+  margin_right: :special
+  margin_bottom: :special
+  margin_left: :special
+  padding_top: :special
+  padding_right: :special
+  padding_bottom: :special
+  padding_left: :special
+  shadow:
+    - ['No Shadow','']
+    - ['Add Basic Shadow','basic']
+  rounded:
+    - ['Square Edges','']
+    - ['Rounded Corners','basic']
+  border_size: :string
+  border_color: :color_picker
+  fixed_position:
+    - ['Normal (Inline)','']
+    - ['Pin to Top','top']
+    - ['Pin to Bottom','bottom']
