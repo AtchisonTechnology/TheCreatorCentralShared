@@ -53,6 +53,16 @@ class WidgetBaseRenderer < BaseRenderer
         retHash["padding"] = "15px" # TODO: More options here?
       end
     end
+    if widget.styles["background"] == "color"
+      retHash["background-color"]=widget.styles['background_color']
+    elsif widget.styles["background"] == "image"
+      retHash["background-image"]="url(#{widget.background_image.url})"
+      retHash["background-position"]=widget.styles['background_position'].gsub(/_/,' ')
+      retHash["background-repeat"]=widget.styles['background_tile'].gsub(/_/,'-')
+      retHash["background-attachment"]=widget.styles['background_attachment']
+      retHash["background-size"]=widget.styles['background_size']
+      retHash["background-color"]=widget.styles['background_color']
+    end
     hashToStyleString retHash
   end
 end
