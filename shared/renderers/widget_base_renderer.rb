@@ -21,6 +21,7 @@ class WidgetBaseRenderer < BaseRenderer
   def render_inherited hash
   end
 
+
   private
 
   def tcc_widget_outer
