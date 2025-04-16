@@ -14,7 +14,11 @@ class WidgetBaseRenderer < BaseRenderer
     ret = {}
     ret["tcc_widget_outer"] = tcc_widget_outer
     ret["tcc_widget"] = tcc_widget
+    self.render_inherited ret
     ret
+  end
+
+  def render_inherited hash
   end
 
   private

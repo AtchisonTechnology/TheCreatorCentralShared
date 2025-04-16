@@ -7,9 +7,9 @@ defaults:
   site_styles:
     page_widths: 'full'
     font_family: 'Tahoma,Verdana,Arial,sans-serif'
-    font_size: '16'
-    h1_font_size: '48'
-    caption_font_size: '12'
+    font_size: '16px'
+    h1_font_size: '48px'
+    caption_font_size: '12px'
     line_height: '1.5em'
   widget_styles:
     width: ""
@@ -28,6 +28,22 @@ defaults:
     border_size: ""
     border_color: ""
     fixed_position: ""
+  widget_separator_styles:
+    border_style: inset
+    border_width: 1px
+  widget_headline_styles:
+    headline_level: h1
+    font_family: ""
+    font_size: ""
+    line_height: ""
+  widget_image_styles:
+    image_width: ""
+    image_height: ""
+    image_align: ""
+  widget_image_text_styles:
+    image_width: "33%"
+    image_height: ""
+    image_float: "right"
 site_styles:
   page_widths:
     - ['Full Width','full']
@@ -69,30 +85,30 @@ site_styles:
     - ['emoji','emoji']
   # https://pimpmytype.com/font-size/
   font_size:
-    - ['12px','12']
-    - ['14px','14']
-    - ['16px (Recommended)','16']
-    - ['18px','18']
-    - ['20px','20']
-    - ['24px','24']
+    - ['12px','12[x']
+    - ['14px','14[x']
+    - ['16px (Recommended)','16[x']
+    - ['18px','18[x']
+    - ['20px','20[x']
+    - ['24px','24[x']
   h1_font_size:
-    - ['24px','24']
-    - ['28px','28']
-    - ['32px','32']
-    - ['36px','36']
-    - ['40px','40']
-    - ['44px','44']
-    - ['48px (Recommended)','48']
-    - ['56px','56']
-    - ['64px','64']
-    - ['96px','96']
-    - ['128px','128']
+    - ['24px','24[x']
+    - ['28px','28[x']
+    - ['32px','32[x']
+    - ['36px','36[x']
+    - ['40px','40[x']
+    - ['44px','44[x']
+    - ['48px (Recommended)','48[x']
+    - ['56px','56[x']
+    - ['64px','64[x']
+    - ['96px','96[x']
+    - ['128px','128[x']
   caption_font_size:
-    - ['8px',8]
-    - ['10px',10]
-    - ['12px (Recommended)',12]
-    - ['14px',14]
-    - ['16px',16]
+    - ['8px',"8px"]
+    - ['10px',"10px"]
+    - ['12px (Recommended)',"12px"]
+    - ['14px',"14px"]
+    - ['16px',"16px"]
   line_height:
     - ['0.8em',"0.8em"]
     - ['0.9em',"0.9em"]
@@ -132,3 +148,146 @@ widget_styles:
     - ['Normal (Inline)','']
     - ['Pin to Top','top']
     - ['Pin to Bottom','bottom']
+widget_separator_styles:
+  border_style:
+    - ['Inset Border','inset']
+    - ['Dotted Border','dotted']
+    - ['Dash Border','dashed']
+    - ['Solid Border','solid']
+    - ['Double Border','double']
+    - ['Ridge Border','ridge']
+    - ['Groove Border','groove']
+    - ['Outset Border','outset']
+  border_width:
+    - ['1px','1px']
+    - ['2px','2px']
+    - ['3px','3px']
+    - ['5px','5px']
+    - ['10px','10px']
+widget_headline_styles:
+  headline_level:
+    - ['Heading Level 1','h1']
+    - ['Heading Level 2','h2']
+    - ['Heading Level 3','h3']
+    - ['Heading Level 4','h4']
+    - ['Heading Level 5','h5']
+    - ['Heading Level 6','h6']
+    - ['Simple Div','div']
+  font_family:
+    - ['Default','']
+    - ['Sans-Serif','-']
+    - ['General Sans-serif','Tahoma,Verdana,Arial,sans-serif']
+    - ['Arial,sans-serif','Arial,sans-serif']
+    - ['Verdana, sans-serif','Verdana, sans-serif']
+    - ['Tahoma, sans-serif','Tahoma, sans-serif']
+    - ['Trebuchet MS, sans-serif','Trebuchet MS, sans-serif']
+    - [' ','-']
+    - ['Serif','-']
+    - ['General Serif','Times New Roman,Georgia, serif']
+    - ['Times New Roman, serif','Times New Roman, serif']
+    - ['Georgia, serif','Georgia, serif']
+    - ['Garamond, serif','Garamond, serif']
+    - [' ','-']
+    - ['Specialty','-']
+    - ['Courier New, monospace','Courier New, monospace']
+    - ['Brush Script MT, cursive','Brush Script MT, cursive']
+    - [' ','-']
+    - ['Generic','-']
+    - ['serif','serif']
+    - ['sans-serif','sans-serif']
+    - ['monospace','monospace']
+    - ['cursive','cursive']
+    - ['emoji','emoji']
+  # https://pimpmytype.com/font-size/
+  font_size:
+    - ['Default','']
+    - ['12px','12px']
+    - ['14px','14px']
+    - ['16px (Recommended)','16px']
+    - ['18px','18px']
+    - ['20px','20px']
+    - ['22px','22px']
+    - ['24px','24px']
+    - ['28px','28px']
+    - ['30px','30px']
+    - ['32px','32px']
+    - ['34px','34px']
+    - ['38px','38px']
+    - ['40px','40px']
+    - ['45px','45px']
+    - ['50px','50px']
+  line_height:
+    - ['Default','']
+    - ['0.8em',"0.8em"]
+    - ['0.9em',"0.9em"]
+    - ['1.0em',"1.0em"]
+    - ['1.1em',"1.1em"]
+    - ['1.2em',"1.2em"]
+    - ['1.3em',"1.3em"]
+    - ['1.4em',"1.4em"]
+    - ['1.5em (Recommended)',"1.5em"]
+    - ['1.7em',"1.7em"]
+    - ['2.0em',"2.0em"]
+    - ['2.2em',"2.2em"]
+    - ['2.5em',"2.5em"]
+    - ['3.0em',"3.0em"]
+    - ['3.5em',"3.5em"]
+widget_image_styles:
+  image_width:
+    - ['Auto Size','']
+    - ['100%','100%']
+    - ['90%','90%']
+    - ['80%','80%']
+    - ['70%','70%']
+    - ['60%','60%']
+    - ['50%','50%']
+    - ['40%','40%']
+    - ['30%','30%']
+    - ['20%','20%']
+    - ['10%','10%']
+  image_height:
+    - ['Auto Size','']
+    - ['100%','100%']
+    - ['90%','90%']
+    - ['80%','80%']
+    - ['70%','70%']
+    - ['60%','60%']
+    - ['50%','50%']
+    - ['40%','40%']
+    - ['30%','30%']
+    - ['20%','20%']
+    - ['10%','10%']
+  image_align:
+    - ['Align Center','']
+    - ['Align Left','left']
+    - ['Align Right','right']
+widget_image_text_styles:
+  image_width:
+    - ['Auto Size','']
+    - ['100%','100%']
+    - ['66%','66%']
+    - ['50%','50%']
+    - ['40%','40%']
+    - ['33%','33%']
+    - ['30%','30%']
+    - ['25%','25%']
+    - ['20%','20%']
+    - ['15%','15%']
+    - ['10%','10%']
+    - ['5%','5%']
+  image_height:
+    - ['Auto Size','']
+    - ['100%','100%']
+    - ['90%','90%']
+    - ['80%','80%']
+    - ['70%','70%']
+    - ['60%','60%']
+    - ['50%','50%']
+    - ['40%','40%']
+    - ['30%','30%']
+    - ['20%','20%']
+    - ['10%','10%']
+  image_float:
+    - ['No Float/Inline','']
+    - ['Float Left','left']
+    - ['Float Right','right']

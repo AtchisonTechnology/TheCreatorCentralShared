@@ -1,11 +1,27 @@
 widgets:
   text_widget:
     name: Text
-    edit_submit_top: false
+    edit_submit_top: true
     edit_submit_bottom: true
   rawhtml_widget:
     name: Raw HTML
-    edit_submit_top: false
+    edit_submit_top: true
+    edit_submit_bottom: true
+  separator_widget:
+    name: Separator
+    edit_submit_top: true
+    edit_submit_bottom: true
+  headline_widget:
+    name: Headline
+    edit_submit_top: true
+    edit_submit_bottom: true
+  image_text_widget:
+    name: Image/Text
+    edit_submit_top: true
+    edit_submit_bottom: true
+  image_widget:
+    name: Image
+    edit_submit_top: true
     edit_submit_bottom: true
 page_layouts:
   single:
