@@ -114,3 +114,16 @@ page_layouts:
       alt1: 1
       main: 1
       alt2: 1
+  header_footer:
+    label: Headers/Footers
+    includes: [main,alt1]
+    summary_override: The following widgets are the (default) widgets in the headers and footers for every page on this site.
+    default: main
+    layout: simple_rows
+    names:
+      main: Header
+      alt1: Footer
+    content_position: [main,alt1]
+    content_size:
+      main: 1
+      alt1: 1
