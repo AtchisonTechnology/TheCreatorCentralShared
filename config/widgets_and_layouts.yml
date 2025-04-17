@@ -23,6 +23,10 @@ widgets:
     name: Image
     edit_submit_top: true
     edit_submit_bottom: true
+  multi_widget:
+    name: Multi Widget Container
+    edit_submit_top: true
+    edit_submit_bottom: true
 page_layouts:
   single:
     label: Single Column

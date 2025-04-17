@@ -26,7 +26,7 @@ class WidgetBaseRenderer < BaseRenderer
 
   def tcc_widget_outer
     retHash = {}
-    retHash["width"] = "100%"
+    # retHash["width"] = "100%"
     hashToStyleString retHash
   end
   def tcc_widget

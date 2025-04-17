@@ -44,6 +44,13 @@ defaults:
     image_width: "33%"
     image_height: ""
     image_float: "right"
+  widget_multi_styles:
+    subwidget_layout: "side"
+    subwidget_gap: ""
+    align_items: "stretch"
+    subwid_relwidth_1: 1
+    subwid_relwidth_2: 1
+    subwid_relwidth_3: 1
 site_styles:
   page_widths:
     - ['Full Width','full']
@@ -291,3 +298,26 @@ widget_image_text_styles:
     - ['No Float/Inline','']
     - ['Float Left','left']
     - ['Float Right','right']
+widget_multi_styles:
+  subwidget_layout:
+    - ["Side-by-Side",'side']
+    - ["Stacked",'stacked']
+  align_items:
+    - ["Align Top","flex-start"]
+    - ["Align Bottom","flex-end"]
+    - ["Center","center"]
+    - ["Stretch","stretch"]
+    - ["Baseline","baseline"]
+  subwidget_gap:
+    - ["No Gap", ""]
+    - ["1px", "1px"]
+    - ["2px", "2px"]
+    - ["3px", "3px"]
+    - ["4px", "4px"]
+    - ["5px", "5px"]
+  subwidget_related:
+    - ["1","1"]
+    - ["2","2"]
+    - ["3","3"]
+    - ["4","4"]
+    - ["5","5"]
