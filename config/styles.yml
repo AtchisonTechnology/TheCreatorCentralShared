@@ -47,6 +47,7 @@ defaults:
   widget_multi_styles:
     subwidget_layout: "side"
     subwidget_gap: ""
+    justify_content: "flex-start"
     align_items: "stretch"
     subwid_relwidth_1: 1
     subwid_relwidth_2: 1
@@ -302,6 +303,13 @@ widget_multi_styles:
   subwidget_layout:
     - ["Side-by-Side",'side']
     - ["Stacked",'stacked']
+  justify_content:
+    - ["Align Left","flex-start"]
+    - ["Align Right","flex-end"]
+    - ["Centered","center"]
+    - ["Space Between","space-between"]
+    - ["Space Around","space-around"]
+    - ["Space Evenly","space-evenly"]
   align_items:
     - ["Align Top","flex-start"]
     - ["Align Bottom","flex-end"]

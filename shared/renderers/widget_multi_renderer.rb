@@ -15,6 +15,7 @@ class WidgetMultiRenderer < WidgetBaseRenderer
     if widget.styles["subwidget_layout"] == 'side'
       retHash["display"] = 'flex'
       retHash["flex-flow"] = 'row wrap'
+      retHash["justify-content"] = widget.styles["justify_content"] if widget.styles["justify_content"].present?
       retHash["align-items"] = widget.styles["align_items"] if widget.styles["align_items"].present?
       retHash["gap"] = widget.styles["subwidget_gap"] if widget.styles["subwidget_gap"].present?
     end
