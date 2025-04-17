@@ -30,59 +30,69 @@ widgets:
 page_layouts:
   single:
     label: Single Column
-    includes: [main]
+    includes: [main,header,footer]
     default: main
     layout: simple_columns
     names:
       main: Main Content
+      header: Page Header
+      footer: Page Footer
     content_position: [main]
     content_size:
       main: 1
   left_side:
     label: Main + Left Sidebar
-    includes: [main,alt1]
+    includes: [main,alt1,header,footer]
     default: main
     layout: simple_columns
     names:
       main: Main Content
       alt1: Left Sidebar
+      header: Page Header
+      footer: Page Footer
     content_position: [alt1,main]
     content_size:
       alt1: 1
       main: 3
   right_side:
     label: Main + Right Sidebar
-    includes: [main,alt1]
+    includes: [main,alt1,header,footer]
     default: main
     layout: simple_columns
     names:
       main: Main Content
       alt1: Right Sidebar
+      header: Page Header
+      footer: Page Footer
     content_position: [main,alt1]
     content_size:
       main: 3
       alt1: 1
   wide_right_side:
     label: Main + Wide Right Sidebar
-    includes: [main,alt1]
+    includes: [main,alt1,header,footer]
     default: main
     layout: simple_columns
     names:
       main: Main Content
       alt1: Right Sidebar
+      header: Page Header
+      footer: Page Footer
     content_position: [main,alt1]
     content_size:
       main: 3
       alt1: 2
   both_sides:
     label: Main + Two Sidebars
-    includes: [main,alt1,alt2]
+    includes: [main,alt1,alt2,header,footer]
     default: main
     layout: simple_columns
     names:
       main: Main Content
       alt1: Left Sidebar
       alt2: Right Sidebar
+      header: Page Header
+      footer: Page Footer
     content_position: [alt1,main,alt2]
     content_size:
       alt1: 1
@@ -90,25 +100,29 @@ page_layouts:
       alt2: 1
   two_equal:
     label: Two Equal Columns
-    includes: [main,alt1]
+    includes: [main,alt1,header,footer]
     default: main
     layout: simple_columns
     names:
       main: Left Content
       alt1: Right Content
+      header: Page Header
+      footer: Page Footer
     content_position: [main,alt1]
     content_size:
       main: 1
       alt1: 1
   three_equal:
     label: Three Equal Columns
-    includes: [alt1,main,alt2]
+    includes: [alt1,main,alt2,header,footer]
     default: main
     layout: simple_columns
     names:
       alt1: Left Content
       main: Middle Content
       alt2: Right Content
+      header: Page Header
+      footer: Page Footer
     content_position: [alt1,main,alt2]
     content_size:
       alt1: 1
@@ -121,8 +135,8 @@ page_layouts:
     default: header
     layout: simple_rows
     names:
-      header: Header
-      footer: Footer
+      header: Site-wide Header
+      footer: Site-wide Footer
     content_position: [header,footer]
     content_size:
       header: 1
