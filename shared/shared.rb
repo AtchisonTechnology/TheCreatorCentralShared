@@ -1,4 +1,4 @@
-require_rel '../config/styles.rb'
+require_rel '../config/'
 StylesConfig = BaseStyles.merge(YAML::load(File.read("#{TheCreatorCentralShared}/config/styles.yml"))).deep_symbolize_keys
 SocialConfig = YAML::load(File.read("#{TheCreatorCentralShared}/config/social.yml")).deep_symbolize_keys
 SubscriptionPackages = YAML::load(File.read("#{TheCreatorCentralShared}/config/subscription_packages.yml")).deep_symbolize_keys
