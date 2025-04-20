@@ -67,3 +67,4 @@ class WidgetBaseRenderer < BaseRenderer
     hashToStyleString retHash
   end
 end
+

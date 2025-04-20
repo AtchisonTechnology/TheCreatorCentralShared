@@ -72,13 +72,7 @@ class SiteRenderer < BaseRenderer
 
   def render_h1_h6 hash
     h1_font_size = site.styles['h1_font_size'] || StylesConfig[:defaults][:site_styles][:h1_font_size]
-    # LEELEE: also fill in "color:" CSS attributes for each of the six
-    hash["h1"]=hashToStyleString({"font-size"=>"#{h1_font_size.to_i}px"})
-    hash["h2"]=hashToStyleString({"font-size"=>"#{(h1_font_size.to_i*3/4).to_i.to_s}px"})
-    hash["h3"]=hashToStyleString({"font-size"=>"#{(h1_font_size.to_i*2/3).to_i.to_s}px"})
-    hash["h4"]=hashToStyleString({"font-size"=>"#{(h1_font_size.to_i*1/2).to_i.to_s}px"})
-    hash["h5"]=hashToStyleString({"font-size"=>"#{(h1_font_size.to_i*1/3).to_i.to_s}px"})
-    hash["h6"]=hashToStyleString({"font-size"=>"#{(h1_font_size.to_i*1/4).to_i.to_s}px"})
+    shared_h1_h6_renderer hash,h1_font_size
   end
 
 
