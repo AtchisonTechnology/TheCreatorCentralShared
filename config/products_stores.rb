@@ -30,7 +30,3 @@ StoreProductListDisplayStyles = [
   :flat_list,
   :med_image_alternate
 ].freeze
-
-# LEELEE
-# ["Flat List",:flat_list],
-#   ["Alternate Images",:med_image_alternate],

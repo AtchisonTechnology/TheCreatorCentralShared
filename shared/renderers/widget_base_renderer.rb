@@ -32,7 +32,7 @@ class WidgetBaseRenderer < BaseRenderer
   def tcc_widget
     retHash = {}
     retHash["width"] = widget.styles["width"] if widget.styles["width"].present?
-    retHash["color"] = widget.styles["text_color"] # LEELEE: Same for rest of these
+    retHash["color"] = widget.styles["text_color"]
     retHash["margin-top"] = widget.styles["margin_top"]
     retHash["margin-right"] = widget.styles["margin_right"]
     retHash["margin-bottom"] = widget.styles["margin_bottom"]

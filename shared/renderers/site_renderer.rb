@@ -38,8 +38,8 @@ class SiteRenderer < BaseRenderer
     if width=='full' or width=='-'
       width = '100%'
     end
-    retHash["max-width"] = width # LEELEE?
-    retHash["min-width"] = width # LEELEE?
+    retHash["max-width"] = width # TODO?
+    retHash["min-width"] = width # TODO?
     retHash["width"] = width
     retHash["margin-left"] = "auto"
     retHash["margin-right"] = "auto"
