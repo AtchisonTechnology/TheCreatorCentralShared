@@ -1,0 +1,26 @@
+PageRobotsFollow = [
+  :allow,
+  :search,
+  :noallow,
+].freeze
+PageSiteMapChangeFreq=[
+  :always,
+  :hourly,
+  :daily,
+  :weekly,
+  :monthly,
+  :yearly,
+  :never,
+].freeze
+PageSiteMapPriority=[
+  :x0x1,
+  :x0x2,
+  :x0x3,
+  :x0x4,
+  :x0x5,
+  :x0x6,
+  :x0x7,
+  :x0x8,
+  :x0x9,
+  :x1x0,
+].freeze
