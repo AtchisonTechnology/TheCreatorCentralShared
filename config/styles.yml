@@ -28,6 +28,7 @@ defaults:
     border_size: ""
     border_color: ""
     fixed_position: ""
+    fly_in: ""
   widget_separator_styles:
     border_style: inset
     border_width: 1px
@@ -144,6 +145,11 @@ widget_styles:
   padding_right: :special
   padding_bottom: :special
   padding_left: :special
+  fly_in:
+    - ["No Fly-In",'']
+    - ["Fly-in from Left",'fromleft']
+    - ["Fly-in from Right",'fromright']
+    - ["Fly-in from Bottom",'frombottom']
   shadow:
     - ['No Shadow','']
     - ['Add Basic Shadow','basic']
