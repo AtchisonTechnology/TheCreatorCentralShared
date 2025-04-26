@@ -9,7 +9,7 @@ ContentType = %i[
 ContentStatus = %i[
     draft
     in_review
-    ready
+    publish
   ].freeze
 
 ContentReadMoreMessages = {
@@ -22,3 +22,5 @@ ContentReadMoreMessages = {
   readhere: "Read the Rest of the Article Here",
   custom: "<custom message>",
 }
+
+PublicationUriFormats=%i[flat pub cat pubcat].freeze
