@@ -15,6 +15,10 @@ widgets:
     name: Multi Widget Container
   menu_widget:
     name: Menu
+  category_list_widget:
+    name: Category List
+  tag_list_widget:
+    name: Tag List
 page_layouts:
   single:
     label: Single Column
