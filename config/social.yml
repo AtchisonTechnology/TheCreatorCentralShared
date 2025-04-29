@@ -2,51 +2,64 @@ details:
   twitterx:
     name: Twitter/X
     fi_icon: fi-social-twitter
+    image_ident: twitterx
     profile: "https://x.com/%ident%"
   facebook:
     name: Facebook
     fi_icon: fi-social-facebook
+    image_ident: facebook
     profile: "https://facebook.com/%ident%"
   instagram:
     name: Instagram
     fi_icon: fi-social-instagram
+    image_ident: instagram
     profile: "https://instagram.com/%ident%"
   tiktok:
     name: TikTok
+    image_ident: tiktok
     profile: "https://tiktok.com/@%ident%"
   linkedin:
     name: LinkedIn
     fi_icon: fi-social-linkedin
+    image_ident: linkedin_personal
     profile: "https://linkedin.com/in/%ident%"
   youtube:
     name: YouTube
     fi_icon: fi-social-youtube
+    image_ident: youtube
     profile: "https://youtube.com/@%ident%"
   medium:
     name: Medium
     fi_icon: fi-social-medium
+    LEELEEimage_ident: xxx
     profile: "https://medium.com/%ident%"
   whatsapp:
     name: WhatsApp
     fi_icon: fi-social-whatsapp
+    LEELEEimage_ident: xxx
     profile: "https://wa.me/%ident%"
   pinterest:
     name: Pinterest
     fi_icon: fi-social-pinterest
+    image_ident: pinterest
     profile: "https://pinterest.com/%ident%"
   bluesky:
     name: Bluesky
+    LEELEEimage_ident: xxx
     profile: "https://bsky.app/profile/%ident%"
   threads:
     name: Threads
+    image_ident: threads
     profile: "https://www.threads.net/@%ident%"
   github:
     name: GitHub
     fi_icon: fi-social-github
+    LEELEEimage_ident: xxx
     profile: "https://github.com/%ident%"
   reddit:
     name: Reddit
     fi_icon: fi-social-reddit
+    LEELEEimage_ident: xxx
     profile: "https://reddit.com/u/%ident%"
 primary:
   - :twitterx
