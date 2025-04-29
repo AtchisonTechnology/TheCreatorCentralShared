@@ -13,6 +13,8 @@ widgets:
     name: Image
   multi_widget:
     name: Multi Widget Container
+  menu_widget:
+    name: Menu
 page_layouts:
   single:
     label: Single Column
