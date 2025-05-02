@@ -19,6 +19,8 @@ widgets:
     name: Category List
   tag_list_widget:
     name: Tag List
+  message_entry_widget:
+    name: Message Entry
 page_layouts:
   single:
     label: Single Column
