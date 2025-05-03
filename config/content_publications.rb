@@ -24,3 +24,11 @@ ContentReadMoreMessages = {
 }
 
 PublicationUriFormats=%i[flat pub cat pubcat].freeze
+
+ContentDisplayStyles = [
+  :image_left,
+  :image_right,
+  :image_top,
+  :image_left_alternating,
+  :image_right_alternating,
+].freeze

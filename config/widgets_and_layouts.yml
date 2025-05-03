@@ -21,6 +21,8 @@ widgets:
     name: Tag List
   message_entry_widget:
     name: Message Entry
+  content_list_widget:
+    name: Content List
 page_layouts:
   single:
     label: Single Column
