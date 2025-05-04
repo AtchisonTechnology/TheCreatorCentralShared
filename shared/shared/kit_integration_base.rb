@@ -5,11 +5,21 @@ module KitIntegrationBase
   #
   ############################################################
 
+  ############################################################
+  #
+  # Subscribers
+  #
   def view_single_subscriber id
     res=call_api(:get,"subscribers/#{id}")
     return nil if res["error"].present?
     res["subscriber"]
   end
+  def list_tags_for_subscriber id
+    res=call_api(:get,"/subscribers/#{id}/tags")
+    return nil if res["error"].present?
+    res["tags"]
+  end
+
 
   ############################################################
   #
@@ -88,47 +98,26 @@ module KitIntegrationBase
 end
 
 
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
+############################################################
 =begin
 class Integrations::Convertkit < Integration
   settings_accessor :api_key,:api_secret
 
-  has_many :ck_subscribers
-  has_many :ck_personalizers
-  has_many :ck_attribute_values
-
-  def ck_subscriber_for_id ck_subscriber_id
-    return nil if ck_subscriber_id.blank?
-    entry = ck_subscribers.where(ck_subscriber_id: ck_subscriber_id).first
-    if entry
-      entry.fill_cache_if_needed!
-      return entry
-    end
-    entry = CkSubscriber.new
-    entry.last_filled_at = nil
-    entry.account_id = self.account_id
-    entry.convertkit_id = self.id
-    entry.ck_subscriber_id = ck_subscriber_id
-    entry.save!
-    entry.fill_cache_if_needed!
-    return entry if entry.last_filled_at.present?
-    entry.destroy
-    nil
-  end
 
   ############################################################
   #
   # Subscribers
   #
-  def view_single_subscriber id
-    res=call_api_get_v3("/v3/subscribers/#{id}")
-    return nil if res["error"].present?
-    res["subscriber"]
-  end
-  def list_tags_for_subscriber id
-    res=call_api_get_v3("/v3/subscribers/#{id}/tags")
-    return nil if res["error"].present?
-    res["tags"]
-  end
 
   def update_fields_subscriber id, fields
     data = {}
