@@ -5,6 +5,18 @@ module KitIntegrationBase
   #
   ############################################################
 
+  #
+  # Get identity objects...
+  #
+  def identity
+    return nil if self.identity_id.blank?
+    @identity ||= Identity.where(provider: "kit_oauth2").find(self.identity_id)
+  end
+  def identity= identity
+    self.identity_id = identity.id
+    @identity = nil
+  end
+
   ############################################################
   #
   # Subscribers
@@ -58,18 +70,6 @@ module KitIntegrationBase
   #
   ############################################################
   private
-
-  #
-  # Get identity objects...
-  #
-  def identity
-    return nil if self.identity_id.blank?
-    @identity ||= Identity.where(provider: "kit_oauth2").find(self.identity_id)
-  end
-  def identity= identity
-    self.identity_id = identity.id
-    @identity = nil
-  end
 
   def is_v4_available?
     self.v4_api_key.present? || self.identity.present?
