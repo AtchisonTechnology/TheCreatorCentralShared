@@ -23,6 +23,8 @@ widgets:
     name: Message Entry
   content_list_widget:
     name: Content List
+  kit_form_widget:
+    name: Kit Form
 page_layouts:
   single:
     label: Single Column

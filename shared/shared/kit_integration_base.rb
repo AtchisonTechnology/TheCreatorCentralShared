@@ -1,21 +1,11 @@
 module KitIntegrationBase
-  ############################################################
+  ########################################################################################################################
+  #
   #
   # Kit specific interface
   #
-  ############################################################
-
   #
-  # Get identity objects...
-  #
-  def identity
-    return nil if self.identity_id.blank?
-    @identity ||= Identity.where(provider: "kit_oauth2").find(self.identity_id)
-  end
-  def identity= identity
-    self.identity_id = identity.id
-    @identity = nil
-  end
+  ########################################################################################################################
 
   ############################################################
   #
@@ -31,6 +21,65 @@ module KitIntegrationBase
     return nil if res["error"].present?
     res["tags"]
   end
+
+  ############################################################
+  #
+  # Forms (cached)
+  #
+  def list_forms_cached
+    return @cache_list_forms if @cache_list_forms.present?
+    res = list_forms
+    @cache_list_forms=res
+    res
+  end
+  # Only include embedded, inline forms...
+  def list_inline_forms_cached
+    list_forms_cached.select{|obj| (!obj["archived"])&&(obj["type"]=="embed")&&(obj["format"]=="inline")}
+  end
+  def form_from_id_cached id
+    id_str=id.to_s
+    list_forms_cached.each do |obj|
+      return obj if obj["id"].to_s==id_str
+    end
+    return nil
+  end
+
+  ############################################################
+  #
+  # Forms
+  #
+  def list_forms
+    res=call_api(:get,'forms')
+    return [] if res["error"].present?
+    res["forms"]
+  end
+
+
+
+
+
+  ########################################################################################################################
+  #
+  #
+  # Support Methods for Integration API Calls
+  #
+  #
+  ########################################################################################################################
+
+  #
+  #
+  # Get identity objects...
+  #
+  #
+  def identity
+    return nil if self.identity_id.blank?
+    @identity ||= Identity.where(provider: "kit_oauth2").find(self.identity_id)
+  end
+  def identity= identity
+    self.identity_id = identity.id
+    @identity = nil
+  end
+
 
   #
   #
@@ -131,6 +180,7 @@ module KitIntegrationBase
     # Setup the URI
     #
     uri = URI("https://api.kit.com/#{version}/#{api}")
+    logger.info "Kit: URI: #{uri.inspect}"
     if [:get,:delete].include?(method)
       uri.query = URI.encode_www_form(data)
     end
@@ -166,54 +216,3 @@ module KitIntegrationBase
 
 end
 
-
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-############################################################
-=begin
-class Integrations::Convertkit < Integration
-  settings_accessor :api_key,:api_secret
-
-
-  ############################################################
-  #
-  # Subscribers
-  #
-
-  def update_fields_subscriber id, fields
-    data = {}
-    data["first_name"] = fields["first_name"] if fields["first_name"].present?
-    data["email_address"] = fields["email_address"] if fields["email_address"].present?
-    fields.delete("email_address")
-    fields.delete("first_name")
-    data["fields"]=fields if fields.size > 0
-    res = call_api_put_v3("/v3/subscribers/#{id}",data)
-    return nil if res["error"].present?
-    res['subscriber']
-  end
-
-  def add_tags_subscriber email_address, tag_array
-    tag_array.each do |tag|
-      req = {}
-      req["email"]=email_address
-      res=call_api_post_v3 "/v3/tags/#{tag}/subscribe",req
-    end
-    nil
-  end
-  def delete_tags_subscriber id, tag_array
-    tag_array.each do |tag|
-      res=call_api_delete_v3 "/v3/subscribers/#{id}/tags/#{tag}"
-    end
-    nil
-  end
-
-end
-=end
