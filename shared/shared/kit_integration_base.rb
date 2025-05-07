@@ -11,6 +11,7 @@ module KitIntegrationBase
   #
   def view_single_subscriber id
     res=call_api(:get,"subscribers/#{id}")
+    puts "LEELEE: res=#{res.inspect}"
     return nil if res["error"].present?
     res["subscriber"]
   end
@@ -32,7 +33,7 @@ module KitIntegrationBase
   # Auto-version selector interface to Kit
   ##############################
   def call_api method,api,data={}
-    if self.v4_api_key.present?
+    if self.v4_api_key.present? || self.v4_bearer_token.present?
       call_api_version(:v4,method,api,data)
     else
       call_api_version(:v3,method,api,data)
@@ -48,7 +49,7 @@ module KitIntegrationBase
     # Verify we have the right credentials for given API version
     #
     if version == :v4
-      return {"error" => "No v4 API key specified"} unless self.v4_api_key?
+      return {"error" => "No v4 API key specified"} unless self.v4_api_key? || self.v4_bearer_token
     else
       return {"error" => "No v3 API key/secret specified"} unless self.v3_api_key? || self.v3_api_secret?
     end
@@ -58,8 +59,10 @@ module KitIntegrationBase
     #
     if version == :v3
       if self.v3_api_secret?
+        logger.info "LEELEE: v3 secret=#{self.v3_api_secret}"
         data["api_secret"]=self.v3_api_secret
       else
+        logger.info "LEELEE: v3 key=#{self.v3_api_key}"
         data["api_key"]=self.v3_api_key
       end
     end
@@ -83,7 +86,15 @@ module KitIntegrationBase
       end
 
       # Insert v4 credentials in the header
-      req['X-Kit-Api-Key']=self.v4_api_key if version==:v4
+      if version==:v4
+        if self.v4_bearer_token.present?
+          logger.info "LEELEE: Bearer token=#{self.v4_bearer_token}"
+          req['Authorization']="Bearer #{self.v4_bearer_token}"
+        else
+          logger.info "LEELEE: Bearer API Key=#{self.v4_api_key}"
+          req['X-Kit-Api-Key']=self.v4_api_key
+        end
+      end
 
       # Send the request
       http.request(req)
