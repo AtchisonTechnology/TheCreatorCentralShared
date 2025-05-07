@@ -11,7 +11,6 @@ module KitIntegrationBase
   #
   def view_single_subscriber id
     res=call_api(:get,"subscribers/#{id}")
-    puts "LEELEE: res=#{res.inspect}"
     return nil if res["error"].present?
     res["subscriber"]
   end
@@ -19,6 +18,37 @@ module KitIntegrationBase
     res=call_api(:get,"/subscribers/#{id}/tags")
     return nil if res["error"].present?
     res["tags"]
+  end
+
+  #
+  #
+  # Process bearer token lifespan
+  #
+  #
+  def expire_v4_bearer_token
+    # Force expire the current bearer token, forcing a refresh
+    self.identity.token = nil
+    self.identity.token_expires_at = 5.seconds.ago
+    self.identity.save!
+  end
+  def refresh_v4_token
+    logger.info "Kit[#{self.id}] v4 bearer token requires refreshing..."
+    uri = URI("https://app.kit.com/oauth/token")
+    resp = Net::HTTP.start(uri.hostname,uri.port,use_ssl: true) do |http|
+      req = Net::HTTP::Post.new(uri)
+      req.body= {
+        "client_id": Rails.application.credentials.dig(:kit_oauth2, :client_id),
+        "grant_type": "refresh_token",
+        "refresh_token": self.identity.refresh_token,
+      }.to_json
+      req.content_type="application/json"
+      http.request(req)
+    end
+    ret = JSON.parse(resp.body)
+    raise "Refresh token error: #{ret['error_description']}" if ret["error"].present?
+    self.identity.token = ret["access_token"]
+    self.identity.token_expires_at = Time.now + ret["expires_in"].seconds
+    self.identity.save!
   end
 
 
@@ -29,11 +59,43 @@ module KitIntegrationBase
   ############################################################
   private
 
+  #
+  # Get identity objects...
+  #
+  def identity
+    return nil if self.identity_id.blank?
+    @identity ||= Identity.where(provider: "kit_oauth2").find(self.identity_id)
+  end
+  def identity= identity
+    self.identity_id = identity.id
+    @identity = nil
+  end
+
+  def is_v4_available?
+    self.v4_api_key.present? || self.identity.present?
+  end
+  def get_valid_v4_bearer_token
+    # Development V4 API Key available? If so, use that...
+    return self.v4_api_key if self.v4_api_key.present?
+
+    # Return error if no identity is associated with this integration
+    return nil if self.identity_id.blank?
+
+    # Return current bearer token if it is available and not expired.
+    return self.identity.token if self.identity.token_expires_at > 5.seconds.from_now and self.identity.token.present?
+
+    # Otherwise, we need to refresh the token
+    self.refresh_v4_token
+
+    # Return the new bearer token
+    return self.identity.token
+  end
+
   ##############################
   # Auto-version selector interface to Kit
   ##############################
   def call_api method,api,data={}
-    if self.v4_api_key.present? || self.v4_bearer_token.present?
+    if is_v4_available?
       call_api_version(:v4,method,api,data)
     else
       call_api_version(:v3,method,api,data)
@@ -49,7 +111,7 @@ module KitIntegrationBase
     # Verify we have the right credentials for given API version
     #
     if version == :v4
-      return {"error" => "No v4 API key specified"} unless self.v4_api_key? || self.v4_bearer_token
+      return {"error" => "No v4 API key specified"} unless self.v4_api_key? || self.is_v4_available?
     else
       return {"error" => "No v3 API key/secret specified"} unless self.v3_api_key? || self.v3_api_secret?
     end
@@ -59,10 +121,8 @@ module KitIntegrationBase
     #
     if version == :v3
       if self.v3_api_secret?
-        logger.info "LEELEE: v3 secret=#{self.v3_api_secret}"
         data["api_secret"]=self.v3_api_secret
       else
-        logger.info "LEELEE: v3 key=#{self.v3_api_key}"
         data["api_key"]=self.v3_api_key
       end
     end
@@ -70,7 +130,7 @@ module KitIntegrationBase
     #
     # Setup the URI
     #
-    uri = URI("https://api.convertkit.com/#{version}/#{api}")
+    uri = URI("https://api.kit.com/#{version}/#{api}")
     if [:get,:delete].include?(method)
       uri.query = URI.encode_www_form(data)
     end
@@ -87,11 +147,9 @@ module KitIntegrationBase
 
       # Insert v4 credentials in the header
       if version==:v4
-        if self.v4_bearer_token.present?
-          logger.info "LEELEE: Bearer token=#{self.v4_bearer_token}"
-          req['Authorization']="Bearer #{self.v4_bearer_token}"
+        if self.get_valid_v4_bearer_token.present?
+          req['Authorization']="Bearer #{self.get_valid_v4_bearer_token}"
         else
-          logger.info "LEELEE: Bearer API Key=#{self.v4_api_key}"
           req['X-Kit-Api-Key']=self.v4_api_key
         end
       end
