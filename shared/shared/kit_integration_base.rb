@@ -24,25 +24,48 @@ module KitIntegrationBase
 
   ############################################################
   #
-  # Forms (cached)
+  # Account
   #
-  def list_forms_cached
-    return @cache_list_forms if @cache_list_forms.present?
-    res = list_forms
-    @cache_list_forms=res
-    res
+  def account_name
+    res=call_api(:get,'account')
+    res["account"]&.[]("name") || "Not Available"
   end
-  # Only include embedded, inline forms...
-  def list_inline_forms_cached
-    list_forms_cached.select{|obj| (!obj["archived"])&&(obj["type"]=="embed")&&(obj["format"]=="inline")}
+
+  ############################################################
+  #
+  # Broadcasts
+  #
+  def create_broadcast subject, content, opts={}
+    data = opts
+    data[:subject] = subject
+    data[:content] = content
+    res = call_api(:post,"broadcasts", data)
+    return nil if res["error"].present?
+    res["broadcast"]
   end
-  def form_from_id_cached id
-    id_str=id.to_s
-    list_forms_cached.each do |obj|
-      return obj if obj["id"].to_s==id_str
-    end
-    return nil
-  end
+  # # API doesn't work yet...
+  # # def update_broadcast broadcast_id, subject=nil, content=nil, opts={}
+  # #   data = opts
+  # #   data[:subject] = subject unless subject.nil?
+  # #   data[:content] = content unless content.nil?
+  # #   call_api_put "/v3/broadcasts/#{broadcast_id}", data
+  # # end
+  # def list_broadcasts data={}
+  #   res=call_api_get("/v3/broadcasts",data)
+  #   return nil if res["error"].present?
+  #   res["broadcasts"]
+  # end
+  # def retrieve_broadcast broadcast_id
+  #   res = call_api_get("/v3/broadcasts/#{broadcast_id}")
+  #   return nil if res["error"].present?
+  #   res["broadcast"]
+  # end
+  # def get_stats broadcast_id
+  #   res = call_api_get("/v3/broadcasts/#{broadcast_id}/stats")
+  #   return nil if res["error"].present?
+  #   res["broadcast"]
+  # end
+
 
   ############################################################
   #
@@ -53,10 +76,6 @@ module KitIntegrationBase
     return [] if res["error"].present?
     res["forms"]
   end
-
-
-
-
 
   ########################################################################################################################
   #
