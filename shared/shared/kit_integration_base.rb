@@ -39,6 +39,7 @@ module KitIntegrationBase
     data = opts
     data[:subject] = subject
     data[:content] = content
+    logger.info "LEELEE: Broadcast data: #{data.inspect}"
     res = call_api(:post,"broadcasts", data)
     return nil if res["error"].present?
     res["broadcast"]
