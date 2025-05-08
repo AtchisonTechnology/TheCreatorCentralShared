@@ -1,4 +1,5 @@
 module KitIntegrationBase
+  KitStoreIntegrationDetailPageUrl = "https://app.kit.com/apps/1202"
   ########################################################################################################################
   #
   #
@@ -76,6 +77,26 @@ module KitIntegrationBase
     res=call_api(:get,'forms')
     return [] if res["error"].present?
     res["forms"]
+  end
+
+  ############################################################
+  #
+  # Custom Fields
+  #
+  def list_fields
+    res=call_api(:get,'custom_fields')
+    return [] if res["error"].present?
+    res["custom_fields"]
+  end
+
+  ############################################################
+  #
+  # Tags
+  #
+  def list_tags
+    res=call_api(:get,'tags')
+    return [] if res["error"].present?
+    res["tags"]
   end
 
   ########################################################################################################################
