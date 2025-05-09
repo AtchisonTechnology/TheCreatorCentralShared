@@ -24,7 +24,9 @@ widgets:
   content_list_widget:
     name: Content List
   kit_form_widget:
-    name: Kit Form
+    name: Kit Subscription Form
+  kit_interest_form_widget:
+    name: Kit Interest Form
 page_layouts:
   single:
     label: Single Column
