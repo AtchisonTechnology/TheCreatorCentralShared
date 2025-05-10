@@ -23,6 +23,33 @@ module KitIntegrationBase
     res["tags"]
   end
 
+  def update_fields_subscriber id, fields
+    data = {}
+    data["first_name"] = fields["first_name"] if fields["first_name"].present?
+    data["email_address"] = fields["email_address"] if fields["email_address"].present?
+    fields.delete("email_address")
+    fields.delete("first_name")
+    data["fields"]=fields if fields.size > 0
+    res = call_api :put,"subscribers/#{id}",data
+    return nil if res["error"].present?
+    res['subscriber']
+  end
+
+  def add_tags_subscriber id, tag_array
+    tag_array.each do |tag|
+      req = {}
+      res=call_api :post, "tags/#{tag}/subscribers/#{id}",req
+    end
+    nil
+  end
+  def delete_tags_subscriber id, tag_array
+    tag_array.each do |tag|
+      res=call_api :delete, "tags/#{tag}/subscribers/#{id}"
+    end
+    nil
+  end
+
+
   ############################################################
   #
   # Account
@@ -40,7 +67,6 @@ module KitIntegrationBase
     data = opts
     data[:subject] = subject
     data[:content] = content
-    logger.info "LEELEE: Broadcast data: #{data.inspect}"
     res = call_api(:post,"broadcasts", data)
     return nil if res["error"].present?
     res["broadcast"]
@@ -252,6 +278,7 @@ module KitIntegrationBase
     #
     # Parse the response
     #
+    return {} if resp.body.nil?
     JSON.parse(resp.body)
   end
 
