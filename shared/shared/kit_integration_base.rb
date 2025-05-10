@@ -257,7 +257,7 @@ module KitIntegrationBase
     #
     resp = Net::HTTP.start(uri.hostname,uri.port,use_ssl: true) do |http|
       req = "Net::HTTP::#{method.capitalize}".constantize.new(uri)
-      if [:put,:post].include?(method)
+      if [:put,:post,:delete].include?(method)
         req.body=data.to_json
         req.content_type="application/json"
       end
