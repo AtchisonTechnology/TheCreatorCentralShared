@@ -72,3 +72,16 @@ caption{
     border-radius: 50%;
     padding: 30px;
 }
+
+.tcc_widget_theme_img_padding{
+    margin: 5px;
+}
+.tcc_widget_theme_img_small_rounded{
+    border-radius: 15px;
+}
+.tcc_widget_theme_img_medium_rounded{
+    border-radius: 30px;
+}
+.tcc_widget_theme_img_oval{
+    border-radius: 50%;
+}
