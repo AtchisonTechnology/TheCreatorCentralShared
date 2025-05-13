@@ -16,6 +16,7 @@ require_rel './renderers/'
 #
 # Themes
 #
+ThemePriorities=[:plain]
 ThemeConfig = {}
 print("Loading themes...\n")
 Dir.glob("#{TheCreatorCentralShared}/themes/**/theme-*.yml").each do |file|

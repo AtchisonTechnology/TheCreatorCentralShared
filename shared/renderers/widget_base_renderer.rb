@@ -44,17 +44,6 @@ class WidgetBaseRenderer < BaseRenderer
     retHash["padding-left"] = widget.styles["padding_left"] if widget.styles["padding_left"].present?
     retHash["border"] = "#{widget.styles["border_size"]} solid #{widget.styles["border_color"]}" if widget.styles["border_size"].present?
     retHash["fixed-position"] = widget.styles["fixed_position"] if widget.styles["fixed_position"].present?
-    if widget.styles["shadow"].present?
-      if  widget.styles["shadow"] == "basic"
-        retHash["box-shadow"] = "10px 5px 5px #ddd" # TODO: More options here?
-      end
-    end
-    if widget.styles["rounded"].present?
-      if  widget.styles["rounded"] == "basic"
-        retHash["border-radius"] = "20px" # TODO: More options here?
-        retHash["padding"] = "15px" # TODO: More options here?
-      end
-    end
     if widget.styles["background"] == "color"
       retHash["background-color"]=widget.styles['background_color']
     elsif widget.styles["background"] == "image"

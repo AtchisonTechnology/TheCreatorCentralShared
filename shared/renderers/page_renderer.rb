@@ -13,8 +13,6 @@ class PageRenderer < BaseRenderer
     ret["body"] = render_body
     ret["tcc_outer_body"] = render_tcc_outer_body
     ret["tcc_inner_body"] = render_tcc_inner_body
-    ret["caption"] = render_caption
-    render_h1_h6 ret
     ret
   end
 
@@ -36,23 +34,11 @@ class PageRenderer < BaseRenderer
   end
   def render_tcc_outer_body
     retHash = {}
-    width = get_prioritized_style('page_widths',page,site) || StylesConfig[:defaults][:site_styles][:page_widths]
-    if width=='full' or width=='-'
-      width = '100%'
-    end
-    retHash["max-width"] = width # TODO?
-    retHash["min-width"] = width # TODO?
-    retHash["width"] = width
-    retHash["margin-left"] = "auto"
-    retHash["margin-right"] = "auto"
     hashToStyleString retHash
   end
 
   def render_tcc_inner_body
     retHash = {}
-    retHash['font-family'] = get_prioritized_style('font_family',page,site) || StylesConfig[:defaults][:site_styles][:font_family]
-    retHash['font-size'] = get_prioritized_style('font_size',page,site) || StylesConfig[:defaults][:site_styles][:font_size]
-    retHash['line-height'] = get_prioritized_style('line_height',page,site) || StylesConfig[:defaults][:site_styles][:line_height]
     if get_prioritized_style("background",page,site) == "color"
       retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("background_color","#000000",page,site)
     elsif get_prioritized_style("background",page,site) == "image"
@@ -64,17 +50,6 @@ class PageRenderer < BaseRenderer
       retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("background_color","#000000",page,site)
     end
     hashToStyleString retHash
-  end
-
-  def render_caption
-    retHash = {}
-    retHash['font-size'] = get_prioritized_style('caption_font_size',page,site) || StylesConfig[:defaults][:site_styles][:caption_font_size]
-    hashToStyleString retHash
-  end
-
-  def render_h1_h6 hash
-    h1_font_size = get_prioritized_style('h1_font_size',page,site) || StylesConfig[:defaults][:site_styles][:h1_font_size]
-    shared_h1_h6_renderer hash,h1_font_size
   end
 
 end

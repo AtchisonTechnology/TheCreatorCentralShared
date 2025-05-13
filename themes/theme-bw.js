@@ -3,6 +3,7 @@
 //
 // CSS
 //
+import './shared/shared.css';
 import './theme-bw.css';
 
 //

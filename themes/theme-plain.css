@@ -1,8 +1,60 @@
-.tcc-theme-plain{
-    h1{
-        color: red;
+h1{font-size:48px}
+h2{font-size:36px}
+h3{font-size:32px}
+h4{font-size:28px}
+h5{font-size:24px}
+h6{font-size:20px}
+caption{
+    font-size: 16px;
+}
+.tcc_outer_body{
+    .tcc_inner_body{
+        font-family: Tahoma,Verdana,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
     }
-    h2{
-        color: blue;
-    }
+}
+
+
+.tcc_widget_theme_width_full_width{
+}
+.tcc_widget_theme_width_full_p80{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tcc_widget_theme_width_full_p60{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tcc_widget_theme_width_full_p40{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tcc_widget_theme_shadow_small{
+    box-shadow: 10px 5px 5px #ddd;
+}
+.tcc_widget_theme_shadow_medium{
+    box-shadow: 20px 10px 10px #ddd;
+}
+.tcc_widget_theme_shadow_large{
+    box-shadow: 30px 15px 15px #ddd;
+}
+.tcc_widget_theme_corner_small{
+    border-radius: 15px;
+    padding: 15px;
+}
+.tcc_widget_theme_corner_medium{
+    border-radius: 30px;
+    padding: 30px;
+}
+.tcc_widget_theme_corner_p25{
+    border-radius: 25%;
+    padding: 30px;
+}
+.tcc_widget_theme_corner_round{
+    border-radius: 50%;
+    padding: 30px;
 }
