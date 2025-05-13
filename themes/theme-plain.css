@@ -1,13 +1,41 @@
-h1{font-size:48px}
-h2{font-size:36px}
-h3{font-size:32px}
-h4{font-size:28px}
-h5{font-size:24px}
-h6{font-size:20px}
+:root{
+    --neutral-100: #f7fafc;
+    --neutral-300: #e2e8f0;
+    --neutral-500: #718096;
+    --neutral-700: #2d3748;
+    --neutral-900: #1a202c;
+    --accent-success: #48bb78;
+    --accent-warning: #ed8936;
+    --accent-error: #e53e3e;
+}
+h1{
+    font-size:48px;
+    color: var(--neutral-900);
+}
+h2{
+    font-size:36px;
+    color: var(--neutral-700);
+}
+h3{
+    font-size:32px;
+    color: var(--neutral-500);
+}
+h4{
+    font-size:28px;
+    color: var(--neutral-500);
+}
+h5{
+    font-size:24px;
+    color: var(--neutral-500);
+}
+h6{
+    font-size:20px;
+    color: var(--neutral-500);
+}
 h1,h2,h3,h4,h5,h6{
     small{
         font-size: .6em;
-        color: #888;
+        color: #888888;
     }
 }
 caption{
@@ -20,69 +48,14 @@ caption{
         line-height: 1.5;
     }
 }
-.tcc_widget_theme_width_full{
-    width: 100%;
-}
-.tcc_widget_theme_width_p90{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_p80{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_p70{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_p60{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_p50{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_p40{
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_1200{
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_1000{
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_800{
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tcc_widget_theme_width_600{
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
 .tcc_widget_theme_shadow_small{
-    box-shadow: 10px 5px 5px #ddd;
+    box-shadow: 10px 5px 5px #dddddd;
 }
 .tcc_widget_theme_shadow_medium{
-    box-shadow: 20px 10px 10px #ddd;
+    box-shadow: 20px 10px 10px #dddddd;
 }
 .tcc_widget_theme_shadow_large{
-    box-shadow: 30px 15px 15px #ddd;
+    box-shadow: 30px 15px 15px #dddddd;
 }
 .tcc_widget_theme_corner_small{
     border-radius: 15px;

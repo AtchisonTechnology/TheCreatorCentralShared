@@ -1,8 +1,85 @@
-.tcc-theme-bw{
-    h1{font-size:48px}
-    h2{font-size:36px}
-    h3{font-size:32px}
-    h4{font-size:24px}
-    h5{font-size:16px}
-    h6{font-size:12px}
+:root{
+    --neutral-100: #ffffff;
+    --neutral-300: #ffffff;
+    --neutral-500: #000000;
+    --neutral-700: #000000;
+    --neutral-900: #000000;
+    --accent-success: #000000;
+    --accent-warning: #000000;
+    --accent-error: #000000;
+}
+h1{
+    font-size:48px;
+    color: #000000;
+}
+h2{
+    font-size:36px;
+    color: #000000;
+}
+h3{
+    font-size:32px;
+    color: #000000;
+}
+h4{
+    font-size:28px;
+    color: #000000;
+}
+h5{
+    font-size:24px;
+    color: #000000;
+}
+h6{
+    font-size:20px;
+    color: #000000;
+}
+h1,h2,h3,h4,h5,h6{
+    small{
+        font-size: .6em;
+        color: #888;
+    }
+}
+caption{
+    font-size: 16px;
+}
+.tcc_outer_body{
+    .tcc_inner_body{
+        font-family: Tahoma,Verdana,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+.tcc_widget_theme_shadow_small{
+}
+.tcc_widget_theme_shadow_medium{
+}
+.tcc_widget_theme_shadow_large{
+}
+.tcc_widget_theme_corner_small{
+    border-radius: 15px;
+    padding: 15px;
+}
+.tcc_widget_theme_corner_medium{
+    border-radius: 30px;
+    padding: 30px;
+}
+.tcc_widget_theme_corner_p25{
+    border-radius: 25%;
+    padding: 30px;
+}
+.tcc_widget_theme_corner_round{
+    border-radius: 50%;
+    padding: 30px;
+}
+
+.tcc_widget_theme_img_padding{
+    margin: 5px;
+}
+.tcc_widget_theme_img_small_rounded{
+    border-radius: 15px;
+}
+.tcc_widget_theme_img_medium_rounded{
+    border-radius: 30px;
+}
+.tcc_widget_theme_img_oval{
+    border-radius: 50%;
 }
