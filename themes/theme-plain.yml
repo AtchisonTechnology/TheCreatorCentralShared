@@ -31,13 +31,27 @@ plain:
         - name: Not Specified
           klass:
         - name: Full Width (100%)
-          klass: width_full_width
+          klass: width_full
+        - name: 90% Width
+          klass: width_p90
         - name: 80% Width
-          klass: width_full_p80
+          klass: width_p80
+        - name: 70% Width
+          klass: width_p70
         - name: 60% Width
-          klass: width_full_p60
+          klass: width_p60
+        - name: 50% Width
+          klass: width_p50
         - name: 40% Width
-          klass: width_full_p40
+          klass: width_p40
+        - name: 1200px Wide
+          klass: width_1200
+        - name: 1000px Wide
+          klass: width_1000
+        - name: 800px Wide
+          klass: width_800
+        - name: 600px Wide
+          klass: width_600
     shadow:
       label: Box Shadow
       values:
