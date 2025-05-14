@@ -1,0 +1,115 @@
+:root{
+    --primary-100: #e4d8fb; /* A very light purple for subtle backgrounds or highlights. */
+    --primary-300: #a078f1; /* A soft lavender that works well for hover states or light accents. */
+    --primary-500: #5619c6; /* Primary color */
+    --primary-700: #3f1090; /* A deeper purple for borders, text, or buttons on light backgrounds. */
+    --primary-900: #27085c; /* A nearly black violet for high contrast needs (text, shadows). */
+    --secondary-100: #d6f5f8; /*  Icy aqua—good for background washes or subtle dividers. */
+    --secondary-300: #84e1ea; /* Soft teal for highlights or hover states. */
+    --secondary-500: #2dc8d6; /* Bold aqua, great for action buttons or icon accents. */
+    --secondary-700: #1b96a1; /* Strong teal for focus rings, selected tabs, or icon fills. */
+    --secondary-900: #0e616a; /* Deep ocean teal for text, overlays, or intense contrast. */
+    --gray-50:  #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --error-100: #fee2e2;
+    --error-500: #ef4444;
+    --error-700: #b91c1c;
+
+    --success-100: #dcfce7;
+    --success-500: #22c55e;
+    --success-700: #15803d;
+
+    --info-100: #e0f2fe;
+    --info-500: #3b82f6;
+    --info-700: #1d4ed8;
+
+    --warning-100: #fff7db;
+    --warning-500: #facc15;
+    --warning-700: #ca8a04;
+}
+h1{
+    font-size:48px;
+    color: var(--primary-500);
+}
+h2{
+    font-size:36px;
+    color: var(--secondary-500);
+}
+h3{
+    font-size:32px;
+    color: var(--primary-300);
+}
+h4{
+    font-size:28px;
+    color: var(--secondary-300);
+}
+h5{
+    font-size:24px;
+    color: var(--primary-100);
+}
+h6{
+    font-size:20px;
+    color: var(--secondary-100);
+}
+h1,h2,h3,h4,h5,h6{
+    small{
+        font-size: .6em;
+        color: #888888;
+    }
+}
+caption{
+    font-size: 16px;
+}
+.tcc_outer_body{
+    .tcc_inner_body{
+        font-family: Tahoma,Verdana,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+.tcc_widget_theme_shadow_small{
+    box-shadow: 10px 5px 5px #dddddd;
+}
+.tcc_widget_theme_shadow_medium{
+    box-shadow: 20px 10px 10px #dddddd;
+}
+.tcc_widget_theme_shadow_large{
+    box-shadow: 30px 15px 15px #dddddd;
+}
+.tcc_widget_theme_corner_small{
+    border-radius: 15px;
+    padding: 15px;
+}
+.tcc_widget_theme_corner_medium{
+    border-radius: 30px;
+    padding: 30px;
+}
+.tcc_widget_theme_corner_p25{
+    border-radius: 25%;
+    padding: 30px;
+}
+.tcc_widget_theme_corner_round{
+    border-radius: 50%;
+    padding: 30px;
+}
+
+.tcc_widget_theme_img_padding{
+    margin: 5px;
+}
+.tcc_widget_theme_img_small_rounded{
+    border-radius: 15px;
+}
+.tcc_widget_theme_img_medium_rounded{
+    border-radius: 30px;
+}
+.tcc_widget_theme_img_oval{
+    border-radius: 50%;
+}

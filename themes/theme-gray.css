@@ -1,9 +1,9 @@
 :root{
-    --neutral-100: #f7fafc;
-    --neutral-300: #e2e8f0;
-    --neutral-500: #718096;
-    --neutral-700: #2d3748;
-    --neutral-900: #1a202c;
+    --primary-100: #f7fafc;
+    --primary-300: #e2e8f0;
+    --primary-500: #718096;
+    --primary-700: #2d3748;
+    --primary-900: #1a202c;
     --accent-success: #718096;
     --accent-warning: #718096;
     --accent-error: #e53e3e;

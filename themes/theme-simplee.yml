@@ -1,0 +1,79 @@
+plain:
+  name: SimpLee
+  page:
+    page_width:
+      label: Page Width
+      values:
+        - name: Default
+          klass:
+        - name: Full Width (100%)
+          klass: page_width_full_width
+        - name: 80% Wide
+          klass: page_width_p80
+        - name: 60% Wide
+          klass: page_width_p60
+        - name: 40% Wide
+          klass: page_width_p40
+        - name: 1600px Wide
+          klass: page_width_1600
+        - name: 1200px Wide
+          klass: page_width_1200
+        - name: 1000px Wide
+          klass: page_width_1000
+        - name: 800px Wide
+          klass: page_width_800
+        - name: 600px Wide
+          klass: page_width_600
+  widget:
+    width:
+      label: Width
+      values:
+        - name: Not Specified
+          klass:
+        - name: Full Width (100%)
+          klass: width_full
+        - name: 90% Width
+          klass: width_p90
+        - name: 80% Width
+          klass: width_p80
+        - name: 70% Width
+          klass: width_p70
+        - name: 60% Width
+          klass: width_p60
+        - name: 50% Width
+          klass: width_p50
+        - name: 40% Width
+          klass: width_p40
+        - name: 1200px Wide
+          klass: width_1200
+        - name: 1000px Wide
+          klass: width_1000
+        - name: 800px Wide
+          klass: width_800
+        - name: 600px Wide
+          klass: width_600
+    shadow:
+      label: Box Shadow
+      values:
+        - name: None
+          klass:
+        - name: Small
+          klass: shadow_small
+        - name: Medium
+          klass: shadow_medium
+        - name: Large
+          klass: shadow_large
+    corners:
+      label: Rounded Corners
+      values:
+        - name: Square Edges (No Rounding)
+          klass:
+        - name: Slightly Rounded
+          klass: corner_small
+        - name: Medium Rounded
+          klass: corner_medium
+        - name: 25% Rounded
+          klass: corner_p25
+        - name: Round/Oval
+          klass: corner_round
+

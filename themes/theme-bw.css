@@ -1,9 +1,9 @@
 :root{
-    --neutral-100: #ffffff;
-    --neutral-300: #ffffff;
-    --neutral-500: #000000;
-    --neutral-700: #000000;
-    --neutral-900: #000000;
+    --primary-100: #ffffff;
+    --primary-300: #ffffff;
+    --primary-500: #000000;
+    --primary-700: #000000;
+    --primary-900: #000000;
     --accent-success: #000000;
     --accent-warning: #000000;
     --accent-error: #000000;
