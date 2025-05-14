@@ -197,11 +197,10 @@ module KitIntegrationBase
     # Return error if no identity is associated with this integration
     return nil if self.identity_id.blank?
 
-    # Return current bearer token if it is available and not expired.
-    return self.identity.token if self.identity.token_expires_at > 5.seconds.from_now and self.identity.token.present?
-
-    # Otherwise, we need to refresh the token
-    self.refresh_v4_token
+    # Refresh the token if it has (or will) expire
+    if self.identity.blank? or (self.identity.token_expires_at < 5.seconds.from_now)
+      self.refresh_v4_token
+    end
 
     # Return the new bearer token
     return self.identity.token
