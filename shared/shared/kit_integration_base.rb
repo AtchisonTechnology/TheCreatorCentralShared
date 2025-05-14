@@ -195,10 +195,10 @@ module KitIntegrationBase
     return self.v4_api_key if self.v4_api_key.present?
 
     # Return error if no identity is associated with this integration
-    return nil if self.identity_id.blank?
+    return nil if self.identity.blank?
 
     # Refresh the token if it has (or will) expire
-    if self.identity.blank? or (self.identity.token_expires_at < 5.seconds.from_now)
+    if self.identity.token.blank? or self.identity.token_expires_at.blank? or (self.identity.token_expires_at < 5.seconds.from_now)
       self.refresh_v4_token
     end
 
