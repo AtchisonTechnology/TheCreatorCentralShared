@@ -165,7 +165,7 @@ module KitIntegrationBase
     resp = Net::HTTP.start(uri.hostname,uri.port,use_ssl: true) do |http|
       req = Net::HTTP::Post.new(uri)
       req.body= {
-        "client_id": Rails.application.credentials.dig(:kit_oauth2, :client_id),
+        "client_id": SecretsManager.get_secret('prod/TccSite/Credentials')['kit_client_id'],
         "grant_type": "refresh_token",
         "refresh_token": self.identity.refresh_token,
       }.to_json
