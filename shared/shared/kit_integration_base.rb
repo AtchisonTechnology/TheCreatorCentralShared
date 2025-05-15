@@ -176,6 +176,7 @@ module KitIntegrationBase
     raise "Refresh token error: #{ret['error_description']}" if ret["error"].present?
     self.identity.token = ret["access_token"]
     self.identity.token_expires_at = Time.now + ret["expires_in"].seconds
+    self.identity.refresh_token = ret["refresh_token"]
     save_identity! # Implemented in TCCApp and TCCSite implementations...
   end
 
