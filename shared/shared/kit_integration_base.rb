@@ -160,7 +160,7 @@ module KitIntegrationBase
     self.identity.save!
   end
   def refresh_v4_token
-    logger.info "Kit[#{self.id}] v4 bearer token requires refreshing..."
+    puts "Kit[#{self.id}] v4 bearer token requires refreshing..."
     uri = URI("https://app.kit.com/oauth/token")
     resp = Net::HTTP.start(uri.hostname,uri.port,use_ssl: true) do |http|
       req = Net::HTTP::Post.new(uri)
@@ -222,7 +222,7 @@ module KitIntegrationBase
   # Primary interface to Kit
   ##############################
   def call_api_version version,method,api,data={}
-    logger.info "Kit[#{id}]: call_api(:#{version},:#{method},#{api.inspect})"
+    puts "Kit[#{id}]: call_api(:#{version},:#{method},#{api.inspect})"
     #
     # Verify we have the right credentials for given API version
     #
@@ -247,7 +247,7 @@ module KitIntegrationBase
     # Setup the URI
     #
     uri = URI("https://api.kit.com/#{version}/#{api}")
-    logger.info "Kit: URI: #{uri.inspect}"
+    puts "Kit: URI: #{uri.inspect}"
     if [:get,:delete].include?(method)
       uri.query = URI.encode_www_form(data)
     end
