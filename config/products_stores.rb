@@ -27,6 +27,9 @@ ListingStatus = %i[in_review listed].freeze
 # Store Product List Widget
 #
 StoreProductListDisplayStyles = [
-  :flat_list,
-  :med_image_alternate
+  :image_left,
+  :image_right,
+  :image_top,
+  :image_left_alternating,
+  :image_right_alternating,
 ].freeze
