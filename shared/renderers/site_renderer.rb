@@ -21,7 +21,7 @@ class SiteRenderer < BaseRenderer
     if site.styles["body_background"] == "color"
       retHash["background-color"]=site.styles['body_background_color']
     elsif site.styles["body_background"] == "image"
-      retHash["background-image"]="url(#{site.body_background_image.url})"
+      retHash["background-image"]="url(#{site.body_background_image.url})" if site.body_background_image.present?
       retHash["background-position"]=site.styles['body_background_position'].gsub(/_/,' ')
       retHash["background-repeat"]=site.styles['body_background_tile'].gsub(/_/,'-')
       retHash["background-attachment"]=site.styles['body_background_attachment']
@@ -40,7 +40,7 @@ class SiteRenderer < BaseRenderer
     if site.styles["background"] == "color"
       retHash["background-color"]=site.styles['background_color']
     elsif site.styles["background"] == "image"
-      retHash["background-image"]="url(#{site.background_image.url})"
+      retHash["background-image"]="url(#{site.background_image.url})" if site.background_image.present?
       retHash["background-position"]=site.styles['background_position'].gsub(/_/,' ')
       retHash["background-repeat"]=site.styles['background_tile'].gsub(/_/,'-')
       retHash["background-attachment"]=site.styles['background_attachment']
