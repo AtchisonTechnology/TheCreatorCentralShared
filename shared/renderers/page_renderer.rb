@@ -23,7 +23,7 @@ class PageRenderer < BaseRenderer
     if get_prioritized_style("body_background",page,site) == "color"
       retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("body_background_color","#000000",page,site)
     elsif get_prioritized_style("body_background",page,site) == "image"
-      retHash["background-image"]="url(#{site.body_background_image.url})"
+      retHash["background-image"]="url(#{site.body_background_image&.url})"
       retHash["background-position"]=get_prioritized_style('body_background_position',page,site).gsub(/_/,' ')
       retHash["background-repeat"]=get_prioritized_style('body_background_tile',page,site).gsub(/_/,'-')
       retHash["background-attachment"]=get_prioritized_style('body_background_attachment',page,site)
