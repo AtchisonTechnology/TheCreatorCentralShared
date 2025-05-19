@@ -102,3 +102,53 @@ caption{
 .tcc_widget_theme_img_oval{
     border-radius: 50%;
 }
+
+
+
+.tcc_button_primary_large,.tcc_button_primary,.tcc_button_primary_small{
+    background-color: var(--primary-500);
+    color: #eee;
+    text-decoration: none;
+}
+.tcc_button_primary_large:hover,.tcc_button_primary:hover,.tcc_button_primary_small:hover{
+    opacity: 0.8;
+    color: #eee;
+    text-decoration: none;
+}
+.tcc_button_secondary_large,.tcc_button_secondary,.tcc_button_secondary_small{
+    background-color: #888;
+    color: #eee;
+    text-decoration: none;
+}
+.tcc_button_secondary_large:hover,.tcc_button_secondary:hover,.tcc_button_secondary_small:hover{
+    background-color: #666;
+    color: #fff;
+    text-decoration: none;
+}
+.tcc_button_trinary_large,.tcc_button_trinary,.tcc_button_trinary_small{
+    border: solid 1px black;
+    background-color:#fff;
+    color: #333;
+    text-decoration: none;
+}
+.tcc_button_trinary_large:hover,.tcc_button_trinary:hover,.tcc_button_trinary_small:hover{
+    border: solid 1px black;
+    background-color:#eee;
+    color: #666;
+    text-decoration: none;
+}
+.tcc_button_primary_large,.tcc_button_secondary_large,.tcc_button_trinary_large{
+    padding:9px;
+    font-size:18px;
+    border-radius: 25px;
+}
+.tcc_button_primary,.tcc_button_secondary,.tcc_button_trinary{
+    padding:8px;
+    font-size:16px;
+    border-radius: 20px;
+}
+.tcc_button_primary_small,.tcc_button_secondary_small,.tcc_button_trinary_small{
+    padding:6px;
+    font-size:12px;
+    border-radius: 10px;
+}

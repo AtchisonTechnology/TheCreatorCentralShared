@@ -4,6 +4,7 @@
 // CSS
 //
 import './shared/shared.css';
+import './shared/buttons.css';
 import './theme-bw.css';
 
 //
