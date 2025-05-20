@@ -86,3 +86,20 @@ caption{
 .tcc_widget_theme_img_oval{
     border-radius: 50%;
 }
+.tcc_menu_widget{
+    ul.menu{
+        li:hover{
+            background-color: var(--primary-300);
+            color: var(--primary-100);
+            ul.submenu{
+                border-color: var(--primary-500);
+                li{
+                }
+                li:hover{
+                    background-color: var(--primary-300);
+                    color: var(--primary-100);
+                }
+            }
+        }
+    }
+}

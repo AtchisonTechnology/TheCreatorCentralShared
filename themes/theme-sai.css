@@ -152,3 +152,20 @@ caption{
     font-size:12px;
     border-radius: 10px;
 }
+.tcc_menu_widget{
+    ul.menu{
+        li:hover{
+            background-color: var(--primary-300);
+            color: var(--primary-100);
+            ul.submenu{
+                border-color: var(--primary-500);
+                li{
+                }
+                li:hover{
+                    background-color: var(--primary-300);
+                    color: var(--primary-100);
+                }
+            }
+        }
+    }
+}
