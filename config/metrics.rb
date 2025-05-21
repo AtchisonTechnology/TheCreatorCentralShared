@@ -1,12 +1,14 @@
 MetricEntryHitTypes = [
+  :no_site,
   :page,
   :download,
   :ext_link,
+  :favicon,
   :robots,
   :sitemap,
   :rss,
   :redirect,
-  :raw_404, # A 404 that was not picked up by a page handler...
+  :status404,
 ].freeze
 MetricEntryHttpAccessMethods = [
   :get,
