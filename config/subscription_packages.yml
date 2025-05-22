@@ -19,6 +19,7 @@ packages:
       max_users: 1
 #      max_tracked_ck_users: 50
 #      max_pageviews: 500
+      max_metrics_days: 3
       custom_domains: false
       req_cc_branding: true
   basic:
@@ -40,6 +41,7 @@ packages:
       max_users: 5
 #      max_tracked_ck_users: 1000
 #      max_pageviews: 5000
+      max_metrics_days: 7
       custom_domains: true
       req_cc_branding: false
   plus:
@@ -62,6 +64,7 @@ packages:
       max_users: 10
 #      max_tracked_ck_users: 5000
 #      max_pageviews: 50000
+      max_metrics_days: 14
       custom_domains: true
       req_cc_branding: false
   premium:
@@ -83,5 +86,6 @@ packages:
       max_users: 20
 #      max_tracked_ck_users: 20000
 #      max_pageviews: 500000
+      max_metrics_days: 30
       custom_domains: true
       req_cc_branding: false
