@@ -2,6 +2,7 @@ PageRobotsFollow = [
   :allow,
   :search,
   :noallow,
+  :none,
 ].freeze
 PageSiteMapChangeFreq=[
   :always,
