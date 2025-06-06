@@ -27,6 +27,10 @@ widgets:
     name: Kit Subscription Form
   kit_interest_form_widget:
     name: Kit Interest Form
+  advertisement_widget:
+    name: Advertisement (Single)
+  advertisement_rotate_widget:
+    name: Advertisement (Rotate)
 page_layouts:
   single:
     label: Single Column
