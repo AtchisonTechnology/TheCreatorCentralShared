@@ -14,6 +14,16 @@ class SiteRenderer < BaseRenderer
     ret
   end
 
+  #
+  # Public methods callable from PageRenderer only
+  #
+  def page_render_body
+    self.render_body
+  end
+  def page_render_tcc_inner_body
+    self.render_tcc_inner_body
+  end
+
   private
 
   def render_body

@@ -19,16 +19,19 @@ class PageRenderer < BaseRenderer
   private
 
   def render_body
+    if page.styles["body_background"].blank?
+      return SiteRenderer.new(site).page_render_body
+    end
     retHash = {}
-    if get_prioritized_style("body_background",page,site) == "color"
-      retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("body_background_color","#000000",page,site)
-    elsif get_prioritized_style("body_background",page,site) == "image"
-      retHash["background-image"]="url(#{page.body_background_image&.url || site.body_background_image.url})"
-      retHash["background-position"]=get_prioritized_style('body_background_position',page,site).gsub(/_/,' ')
-      retHash["background-repeat"]=get_prioritized_style('body_background_tile',page,site).gsub(/_/,'-')
-      retHash["background-attachment"]=get_prioritized_style('body_background_attachment',page,site)
-      retHash["background-size"]=get_prioritized_style('body_background_size',page,site)
-      retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("background_color","#000000",page,site)
+    if page.styles["body_background"] == "color"
+      retHash["background-color"]=page.styles['body_background_color']
+    elsif page.styles["body_background"] == "image"
+      retHash["background-image"]="url(#{page.body_background_image.url})" if page.body_background_image.present?
+      retHash["background-position"]=page.styles['body_background_position'].gsub(/_/,' ')
+      retHash["background-repeat"]=page.styles['body_background_tile'].gsub(/_/,'-')
+      retHash["background-attachment"]=page.styles['body_background_attachment']
+      retHash["background-size"]=page.styles['body_background_size']
+      retHash["background-color"]=page.styles['body_background_color']
     end
     hashToStyleString retHash
   end
@@ -38,16 +41,19 @@ class PageRenderer < BaseRenderer
   end
 
   def render_tcc_inner_body
+    if page.styles["body_background"].blank?
+      return SiteRenderer.new(site).page_render_tcc_inner_body
+    end
     retHash = {}
-    if get_prioritized_style("background",page,site) == "color"
-      retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("background_color","#000000",page,site)
-    elsif get_prioritized_style("background",page,site) == "image"
-      retHash["background-image"]="url(#{page.background_image&.url || site.background_image.url})"
-      retHash["background-position"]=get_prioritized_style('background_position',page,site).gsub(/_/,' ')
-      retHash["background-repeat"]=get_prioritized_style('background_tile',page,site).gsub(/_/,'-')
-      retHash["background-attachment"]=get_prioritized_style('background_attachment',page,site)
-      retHash["background-size"]=get_prioritized_style('background_size',page,site)
-      retHash["background-color"]=get_prioritized_style_with_alt_inherit_value("background_color","#000000",page,site)
+    if page.styles["background"] == "color"
+      retHash["background-color"]=page.styles['background_color']
+    elsif page.styles["background"] == "image"
+      retHash["background-image"]="url(#{page.background_image.url})" if page.background_image.present?
+      retHash["background-position"]=page.styles['background_position'].gsub(/_/,' ')
+      retHash["background-repeat"]=page.styles['background_tile'].gsub(/_/,'-')
+      retHash["background-attachment"]=page.styles['background_attachment']
+      retHash["background-size"]=page.styles['background_size']
+      retHash["background-color"]=page.styles['background_color']
     end
     hashToStyleString retHash
   end
