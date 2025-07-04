@@ -50,4 +50,4 @@ production:
     protocol: https
   services:
     app: "https://app.thecreatorcentral.com"
-    sites: "https://app.thecreatorcentral.site"
+    sites: "http://app.thecreatorcentral.site"
